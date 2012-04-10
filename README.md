@@ -2,7 +2,6 @@ HiTask API
 ====================
 
 
-
 JSON
 -----------------
 
@@ -21,4 +20,9 @@ Rate limiting
 You can perform up to 200 requests per 10 second period from the same IP address for the same account. If you exceed ths limit you will have to wait before your next request is processed.
 
 
+API endpoints
+-----------------
 
+* [User](https://github.com/hitask/api/blob/master/documentation/user.md)
+* [Item (task, event, note, project)](https://github.com/hitask/api/blob/master/documentation/item.md)
+* [Contact](https://github.com/hitask/api/blob/master/documentation/contact.md)
