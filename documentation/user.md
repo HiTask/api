@@ -7,7 +7,7 @@ Operations related to current user's account: authenticate, sign up, etc.
 Authenticate
 ------------
 
-* `GET /user/authenticate` will authenticate user usign user name and password
+* `GET /user/authenticate` will authenticate user using user name and password
 
 
 Validate signup information
