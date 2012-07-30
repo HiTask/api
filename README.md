@@ -19,6 +19,14 @@ Rate limiting
 
 You can perform up to 200 requests per 10 second period from the same IP address for the same account. If you exceed this limit you will have to wait before your next request is processed.
 
+Authentication and session
+--------------------------
+
+All requests require authentication. Authentication achieved through [User.authenticate](https://github.com/hitask/api/blob/master/documentation/user.md) which returns session id
+Your application have to provide session id with every request. There are two ways of doing this:
+
+* Cookie. If your application framework supports cookies automatically you don't have to do anything, cookie will be sent with every request.
+* HTTP header parameter. Alternatively you can provide session id as "x-hi-session" header with every request.
 
 API endpoints
 -----------------

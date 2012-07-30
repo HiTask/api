@@ -9,19 +9,43 @@ Authenticate
 
 * `GET /user/authenticate` will authenticate user using user name and password
 
+Input parameters:
+* user name
+* hashed password
 
-Validate signup information
-------------
+Response:
 
-This method is used to validate user registration (sign up ) form before submitting
+* id: unique user id used to identify this user account
+* level: account level
+* session_id: session token
 
-* `GET /user/validatesignup` will verify that user name is not taken, and other parameters are valig
+Example request:
+
+```
+{
+    "api_key" = myapikey;
+    login = john;
+    password = XXXXXXXXX;
+}
+```
+
+Example response:
+```
+{
+    id = 12345678;
+    level = 300;
+    "session_id" = "e0f93451-5ad6-4550-b991-efb0ce1e271b";
+}
+```
 
 
 Sign out
 ------------
 
 * `GET /user/signout` Close user's session.
+
+Input parameters:
+* session_id: session token
 
 
 
