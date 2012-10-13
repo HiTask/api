@@ -48,5 +48,35 @@ Input parameters:
 * session_id: session token
 
 
+User Account information
+------------
 
+* `GET /user`  Get current user acocutn information
 
+Example response:
+```
+{
+    businessId = 123;
+    businessLevel = 100;
+	email = "name@gmail.com";
+	emailConfirmed = "name@gmail.com";
+	id = 123;
+	isOnline = 1;
+	level = 0;
+	login = john;
+	firstName = Mick;
+	lastName = Johnson;
+}
+```
+
+Response:
+
+* businessId: id of Business group acocunt, if applicable
+* businessLevel: Business accoutn member level
+* email: user's email address
+* emailConfirmed: user's email address
+* id: global unique user id
+* isOnline: user's online status
+* level: user's accoutn level: 0: Free, 50: Premium, 100: Business
+* login: user login id
+* firstName, lastName: first and last name
