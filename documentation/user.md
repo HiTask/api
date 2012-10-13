@@ -69,14 +69,57 @@ Input parameters:
 }
 ```
 
-Response:
+### Response fields:
 
-* businessId: id of Business group acocunt, if applicable
-* businessLevel: Business accoutn member level
-* email: user's email address
-* emailConfirmed: user's email address
-* id: global unique user id
-* isOnline: user's online status
-* level: user's accoutn level: 0: Free, 50: Premium, 100: Business
-* login: user login id
-* firstName, lastName: first and last name
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>id</code></td>
+        <td>long</td>
+        <td>Globally unique primary identifier for a user. This is an integer, but it is recommended to handle it as String to avoid limitations with the way JavaScript integers are expressed.</td>
+    </tr>
+    <tr>
+        <td><code>level</code></td>
+        <td>integer</td>
+        <td>user's account level: 0: Free, 50: Premium, 100: Business</td>
+    </tr>
+    <tr>
+        <td><code>login</code></td>
+        <td>String</td>
+        <td>user login id</td>
+    </tr>
+    <tr>
+        <td><code>firstName</code></td>
+        <td>String</td>
+        <td>user's First Name</td>
+    </tr>
+    <tr>
+        <td><code>lastName</code></td>
+        <td>String</td>
+        <td>user's Last Name</td>
+    </tr>
+    <tr>
+        <td><code>emailConfirmed</code></td>
+        <td>String</td>
+        <td>Email address that was confirmed by the user. (By clicking confirmaiton link sent to this email address.)</td>
+    </tr>
+    <tr>
+        <td><code>email</code></td>
+        <td>String</td>
+        <td>Email address that user entered but not confirmed. Do not send emails to this address as it may not be confirmed.</td>
+    </tr>
+    <tr>
+        <td><code>businessId</code></td>
+        <td>Integer</td>
+        <td>unique identifier of user's Business group account, if applicable </td>
+    </tr>
+    <tr>
+        <td><code>businessLevel</code></td>
+        <td>Integer</td>
+        <td>MEmbership level of user in Business account</td>
+    </tr>
+</table>
