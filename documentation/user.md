@@ -1,11 +1,9 @@
-User
-========
+# User
 
 Operations related to current user's account: authenticate, sign up, etc.
 
+## Authenticate
 
-Authenticate
-------------
 
 * `GET /user/authenticate` will authenticate user using user name and password
 
@@ -13,15 +11,15 @@ Input parameters:
 * user name
 * hashed password
 
-Response:
+Response values:
 
 * id: unique user id used to identify this user account
 * level: account level
 * session_id: session token
 
-Example request:
+### Example request:
 
-```
+```js
 {
     "api_key" = myapikey;
     login = john;
@@ -29,8 +27,9 @@ Example request:
 }
 ```
 
-Example response:
-```
+### Example response:
+
+```js
 {
     id = 12345678;
     level = 300;
@@ -39,8 +38,9 @@ Example response:
 ```
 
 
-Sign out
-------------
+## Sign out
+
+End current session
 
 * `GET /user/signout` Close user's session.
 
@@ -48,13 +48,13 @@ Input parameters:
 * session_id: session token
 
 
-User Account information
-------------
+## User Account information
 
 * `GET /user`  Get current user acocutn information
 
-Example response:
-```
+### Example response:
+
+```js
 {
     businessId = 123;
     businessLevel = 100;
