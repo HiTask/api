@@ -11,11 +11,17 @@ Get list of user's contacts
 
 ```js
 {
-"level":0,
-"subscription":"BOTH",
-"isOnline":false,
-"id":321,
-"email":"user@email.com"
+email: "user@email.com"
+emailConfirmed: "user@email.com"
+firstName: "John"
+id: 123
+isOnline: false
+isPremium: true
+lastName: "Jackson"
+level: 100
+login: "John"
+pictureHash: "267744510460b6ec63453483f725252"
+subscription: "BOTH"
 }
 ```
 
