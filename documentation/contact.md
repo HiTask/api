@@ -16,14 +16,75 @@ emailConfirmed: "user@email.com"
 firstName: "John"
 id: 123
 isOnline: false
-isPremium: true
 lastName: "Jackson"
 level: 100
-login: "John"
+login: "john"
 pictureHash: "267744510460b6ec63453483f725252"
 subscription: "BOTH"
 }
 ```
+
+### Response fields:
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>id</code></td>
+        <td>long</td>
+        <td>Globally unique primary identifier for a contact.</td>
+    </tr>
+    <tr>
+        <td><code>level</code></td>
+        <td>integer</td>
+        <td>user's account level: 0: Free, 50: Premium, 100: Business</td>
+    </tr>
+    <tr>
+        <td><code>login</code></td>
+        <td>String</td>
+        <td>user login id</td>
+    </tr>
+    <tr>
+        <td><code>firstName</code></td>
+        <td>String</td>
+        <td>user's First Name</td>
+    </tr>
+    <tr>
+        <td><code>lastName</code></td>
+        <td>String</td>
+        <td>user's Last Name</td>
+    </tr>
+    <tr>
+        <td><code>emailConfirmed</code></td>
+        <td>String</td>
+        <td>Email address that was confirmed by the user. (By clicking confirmaiton link sent to this email address.)</td>
+    </tr>
+    <tr>
+        <td><code>email</code></td>
+        <td>String</td>
+        <td>Email address that user entered but not confirmed. Do not send emails to this address as it may not be confirmed.</td>
+    </tr>
+    <tr>
+        <td><code>pictureHash</code></td>
+        <td>String</td>
+        <td>Unique address of user's avatar picture. <br/>To display the picture following URL composition should be used:<br/>
+        [http|https]://htiask.com/avatar/[pictureHash].[pixel size].gif
+        <br/>where pixel size is one of 16,40,64,80
+</td>
+    </tr>
+    <tr>
+        <td><code>subscription</code></td>
+        <td>String</td>
+        <td>Designates if contact request is sent or receved or if relationship is established.<br/>
+      Can be one of: FROM, TO, BOTH.<br/>BOTH means contact relationship is established.
+FROM means request from this contact is received. TO means request was sent and we're waiting for user to accept.
+</td>
+    </tr>
+</table>
+
 
 
 Add contact
