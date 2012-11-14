@@ -9,6 +9,15 @@ Get list of user's contacts
 
 * `GET 	/contact` will return list of user's contacts
 
+```js
+{
+"level":0,
+"subscription":"BOTH",
+"isOnline":false,
+"id":321,
+"email":"user@email.com"
+}
+```
 
 
 Add contact
