@@ -9,6 +9,22 @@ Get list of user's contacts
 
 * `GET 	/contact` will return list of user's contacts
 
+### Parameters
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>includeSelf</code></td>
+        <td>1 or 0</td>
+        <td>Include current user.</td>
+    </tr>
+</table>
+
+### Example response
+
 ```js
 {
 email: "user@email.com"
@@ -81,6 +97,7 @@ subscription: "BOTH"
         <td>Designates if contact request is sent or receved or if relationship is established.<br/>
       Can be one of: FROM, TO, BOTH.<br/>BOTH means contact relationship is established.
 FROM means request from this contact is received. TO means request was sent and we're waiting for user to accept.
+SELF means this is the current user.
 </td>
     </tr>
 </table>
