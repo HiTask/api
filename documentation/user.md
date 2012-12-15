@@ -21,9 +21,9 @@ Response values:
 
 ```js
 {
-    "api_key" = myapikey;
-    login = john;
-    password = XXXXXXXXX;
+    "api_key" : myapikey;
+    login : john;
+    password : XXXXXXXXX;
 }
 ```
 
@@ -31,9 +31,9 @@ Response values:
 
 ```js
 {
-    id = 12345678;
-    level = 300;
-    "session_id" = "e0f93451-5ad6-4550-b991-efb0ce1e271b";
+    id : 12345678;
+    level : 300;
+    "session_id" : "e0f93451-5ad6-4550-b991-efb0ce1e271b";
 }
 ```
 
@@ -56,16 +56,16 @@ Input parameters:
 
 ```js
 {
-    businessId = 123;
-    businessLevel = 100;
-	email = "name@gmail.com";
-	emailConfirmed = "name@gmail.com";
-	id = 123;
-	isOnline = 1;
-	level = 0;
-	login = john;
-	firstName = Mick;
-	lastName = Johnson;
+    businessId : 123;
+    businessLevel : 100;
+	email : "name@gmail.com";
+	emailConfirmed : "name@gmail.com";
+	id : 123;
+	isOnline : 1;
+	level : 0;
+	login : john;
+	firstName : Mick;
+	lastName : Johnson;
 }
 ```
 
