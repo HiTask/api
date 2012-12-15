@@ -20,8 +20,8 @@ You need to check HTTP status in case there's an error. Basic rule is to check t
 When response statu is not 200 OK. The response contains Json date in format:
 ```json
 {
- "error_message" = "This is an error message";
- "response_status" = 1;
+ "error_message" : "This is an error message";
+ "response_status" : 1;
 }
 ```
 
