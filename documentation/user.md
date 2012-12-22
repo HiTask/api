@@ -50,7 +50,7 @@ Input parameters:
 
 ## User Account information
 
-* `GET /user`  Get current user acocutn information
+* `GET /user`  Get current user account information
 
 ### Example response:
 
@@ -123,3 +123,16 @@ Input parameters:
         <td>MEmbership level of user in Business account</td>
     </tr>
 </table>
+
+
+
+
+
+## Update User Account information
+
+* `PUT /user`  Update current user account information
+
+Input parameters:
+* firstName: First Name
+* lastName: Last Name
+* email: e-mail address. If email address is different from previously stored, an email message with address confirmation will be sent
