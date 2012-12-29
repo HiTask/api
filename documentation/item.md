@@ -7,36 +7,182 @@ Operations with items: tasks, projects, notes, files, etc.
 Item  object properties
 ------------
 
-
-* id: 12345, __global unique item id__
-* guid: "123456abcdef", __global unique item id used for sharing__
-* user_id: 12345, __user id of owner, user who created this item__
-* title: "My Task",
-* completed: false, 
-* color: 0,   __color tag__
-* category: 1,  __Category: 0:project 1: task 2:event 4: note 5:file__
-* message: "Text", __item description text__
-* parent: 0,  __unique id of parent item. 0 means item is not child of another item and not inside of project__
-* recurring: 0, __0: not recurring, 1: daily, 2: weekly, 3: monthly, 4: yearly__
-* assigneeId: 143465, __user id of user whom item is assigned to__
-* participants: [ ], __array of user id for this item participants__
-* time_last_update: "2012-07-15T19:55:00.000+10:00",
-* time_create: "2012-01-25T14:58:51.000+11:00",
-* start_date: "2012-03-15T19:00:00.000+10:00",
-* is_all_day: false,
-* shared: false,
-* reminder_enabled: true,
-* reminder_time: 5,
-* reminder_time_type: "m",
-* starred: false,
-* time_track: false,  __flag to specify if time tracking is enabled fo rhtis item__
-* time_est: 0,
-* time_spent: 0,
-* priority: 21000,  __Arbitrary priority. 10000-19999:low, 20000-29999:normal, 30000:high__
-* tags: [ ],   __array or tags added to item_
-* instances: [], __array of instances for recurring item__
-
-
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+         <th>Example</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>id</code></td>
+        <td>long</td>
+        <td>123000</td>
+        <td>Globally unique item Identifier</td>
+    </tr>
+       <tr>
+        <td><code>guid</code></td>
+        <td>String (UDID)</td>
+        <td>123456abcdef</td>
+        <td>Globally unique item Identifier used for public sharing</td>
+    </tr>
+     <tr>
+        <td><code>user_id</code></td>
+        <td>long</td>
+        <td>123000</td>
+        <td>user id of owner, user who created this item</td>
+    </tr>  
+     <tr>
+        <td><code>title</code></td>
+        <td>String (512)</td>
+        <td>My Task</td>
+        <td>title</td>
+    </tr>  
+       <tr>
+        <td><code>completed</code></td>
+        <td>int</td>
+        <td>0</td>
+        <td>Indication if this item is completed</td>
+    </tr>  
+       <tr>
+        <td><code>color</code></td>
+        <td>int</td>
+        <td>0</td>
+        <td>color tag</td>
+    </tr> 
+       <tr>
+        <td><code>category</code></td>
+        <td>int</td>
+        <td>1</td>
+        <td>Category (or type) of item: 0:project 1: task 2:event 4: note 5:file</td>
+    </tr> 
+       <tr>
+        <td><code>message</code></td>
+        <td>String (5000)</td>
+        <td>Hello</td>
+        <td>Item description text</td>
+    </tr> 
+       <tr>
+        <td><code>parent</code></td>
+        <td>long</td>
+        <td>0</td>
+        <td>Unique id of parent item. Default: 0. 0 means item is not child of another item and not inside of project</td>
+    </tr> 
+       <tr>
+        <td><code>recurring</code></td>
+        <td>int</td>
+        <td>0</td>
+        <td>0: not recurring, 1: daily, 2: weekly, 3: monthly, 4: yearly</td>
+    </tr> 
+       <tr>
+        <td><code>assigneeId</code></td>
+        <td>long</td>
+        <td>0</td>
+        <td>Assignee, primary responsible person. User id of user whom item is assigned to</td>
+    </tr> 
+        <tr>
+        <td><code>participants</code></td>
+        <td>array[long]</td>
+        <td>[322,413]</td>
+        <td>array of user id for this item participants</td>
+    </tr>    
+         <tr>
+        <td><code>start_date</code></td>
+        <td>Date</td>
+        <td>2012-03-15T19:00:00.000+10:00</td>
+        <td>Start date and time for this item. Default:null.</td>
+    </tr>    
+          <tr>
+        <td><code>end_date</code></td>
+        <td>Date</td>
+        <td>2012-03-15T19:00:00.000+10:00</td>
+        <td>End date and time for this item. Default:null.</td>
+    </tr>
+             <tr>
+        <td><code>is_all_day</code></td>
+        <td>int</td>
+        <td>0</td>
+        <td>Indicator that this item is "all day" event. Only date without time should be used from start/end date field..</td>
+    </tr>
+          <tr>
+        <td><code>reminder_enabled</code></td>
+        <td>int</td>
+        <td>0</td>
+        <td>Enable alarm/reminder.</td>
+    </tr>    
+           <tr>
+        <td><code>reminder_time</code></td>
+        <td>int</td>
+        <td>5</td>
+        <td>When alarm is happening. Time before start_date.</td>
+    </tr>   
+             <tr>
+        <td><code>reminder_time_type</code></td>
+        <td>String</td>
+        <td>m</td>
+        <td>reminder_time measure: m:minutes, h: hours, d: days.</td>
+    </tr>     
+              <tr>
+        <td><code>shared</code></td>
+        <td>int</td>
+        <td>0</td>
+        <td>0: Item is private. 1: item is shared, visile to team memebrs (Business account feature)</td>
+    </tr>
+   <tr>
+        <td><code>time_last_update</code></td>
+        <td>Date</td>
+        <td>2012-03-15T19:00:00.000+10:00</td>
+        <td>Timestamp when this item was last changed (updated).</td>
+    </tr>
+       <tr>
+        <td><code>time_create</code></td>
+        <td>Date</td>
+        <td>2012-03-15T19:00:00.000+10:00</td>
+        <td>Timestamp when this item was created.</td>
+    </tr>
+           <tr>
+        <td><code>starred</code></td>
+        <td>int</td>
+        <td>0</td>
+        <td>If item is marked as starred, 1 or 0</td>
+    </tr>
+           <tr>
+        <td><code>time_track</code></td>
+        <td>int</td>
+        <td>0</td>
+        <td>1/0 flag to specify if time tracking is enabled for htis item. Default:0.</td>
+    </tr>
+               <tr>
+        <td><code>time_est</code></td>
+        <td>float</td>
+        <td>0</td>
+        <td>Time estimated for this item, in hours. Used in time tracking calculations.Optional.</td>
+    </tr>
+                 <tr>
+        <td><code>time_spent</code></td>
+        <td>float</td>
+        <td>0</td>
+        <td>Total time spent recorded for this item.</td>
+    </tr>
+                     <tr>
+        <td><code>priority</code></td>
+        <td>int</td>
+        <td>20000</td>
+        <td>Arbitrary priority. 10000-19999:low, 20000-29999:normal, 30000:high. Default: 20000 (normal)</td>
+    </tr>
+                        <tr>
+        <td><code>tags</code></td>
+        <td>array[string]</td>
+        <td>["work","home"]</td>
+        <td>array or tags added to item</td>
+    </tr>
+     <tr>
+        <td><code>instances</code></td>
+        <td>array[item_instance]</td>
+        <td>[]</td>
+        <td>array of instances for recurring item</td>
+    </tr>
+</table>
 
 
 Get array of items
