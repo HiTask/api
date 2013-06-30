@@ -48,9 +48,15 @@ Item  object properties
         <td><code>color</code></td>
         <td>int</td>
         <td>0</td>
-        <td>color tag</td>
+        <td>Color tag</td>
     </tr> 
-       <tr>
+    <tr>
+        <td><code>color_value</code></td>
+        <td>Strng</td>
+        <td>#5e93c3</td>
+        <td>Color value used for projects. Default: #5e93c3<br/>One of these colors: ['#5e93c3', '#fc2f6a', '#fd9426', '#fecb2e', '#55ce2e', '#cb77df', '#a18460']</td>
+    </tr> 
+    <tr>
         <td><code>category</code></td>
         <td>int</td>
         <td>1</td>
