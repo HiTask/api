@@ -54,10 +54,10 @@ subscription: "BOTH"
         <td>Globally unique primary identifier for a contact.</td>
     </tr>
     <tr>
-        <td><code>level</code></td>
-        <td>integer</td>
-        <td>user's account level: 0: Free, 50: Premium, 100: Business</td>
-    </tr>
+        <td><code>accountType</code></td>
+        <td>String</td>
+        <td>User's account type: <code>TEAM_BASIC, TEAM_BUSINESS, PERSONAL_FREE, PERSONAL_PREMIUM</code></td>
+    </tr> 
     <tr>
         <td><code>login</code></td>
         <td>String</td>
