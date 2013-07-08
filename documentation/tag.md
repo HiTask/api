@@ -40,11 +40,16 @@ Add tag
 
 * `POST	/tag`
 
+Update tag
+------------
+
+* `PUT    /tag/{id}`
+
 
 Delete
 ------------
 
-* `DELETE	/tag` 
+* `DELETE	/tag/{id}` 
 
 
 List tags
