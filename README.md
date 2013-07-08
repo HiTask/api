@@ -61,5 +61,5 @@ API methods
 * [User:](https://github.com/hitask/api/blob/master/documentation/user.md) authenticate, get user account information
 * [Item:](https://github.com/hitask/api/blob/master/documentation/item.md) task, event, note, project objects
 * [Contact:](https://github.com/hitask/api/blob/master/documentation/contact.md) information about contacts
-* Tag: list tags, add, delete, update tags
+* [Tag:](https://github.com/hitask/api/blob/master/documentation/tag.md)  Tag: list tags, add, delete, update tags
 
