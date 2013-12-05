@@ -236,11 +236,19 @@ Possible HTTP return responses:
 * 404 item not found. It may be already deleted or not visible to current user.
 * 403 not authorised
 
+History
+-----------
+
+Retrieve item history including comments:
+
+* `GET    /item/history?id={item id}` 
+
 Add comment
 ------------
 
 * `POST    /item/comment` will add a new comment to the item
 
+Parameters: id: item id, message: comment body text
 
 Delete comment
 ------------
