@@ -188,6 +188,12 @@ Item  object properties
         <td>[]</td>
         <td>array of instances for recurring item</td>
     </tr>
+    <tr>
+        <td><code>location</code></td>
+        <td>object</td>
+        <td>{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}</td>
+        <td>Map that contains long/lat coordinates and address</td>
+    </tr>
 </table>
 
 
