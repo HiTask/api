@@ -1,0 +1,94 @@
+FORMAT: 1A
+HOST: https://secure.hitask.com
+
+# hiTask
+
+# Group User
+
+Notes related resources of the **User API**
+Operations related to current user's account: authenticate, sign up, etc.
+
+## Users collection [/user]
+### GET /user/authenticate
+
+Authenticate user using user name and password
+
+Input parameters:
+* user name
+* hashed password
+
+Response values:
+
+* id: unique user id used to identify this user account
+* level: account level
+* session_id: session token
+
++ Request
+
+```js
+{
+    "api_key" : myapikey;
+    login : john;
+    password : XXXXXXXXX;
+}
+```
+
++ Response 200 (application/json)
+
+```js
+{
+    id : 12345678;
+    level : 300;
+    "session_id" : "e0f93451-5ad6-4550-b991-efb0ce1e271b";
+}
+```
+
+
+### GET /user/signout{session_id}
+
+End current session, Close user's session.
+
++ Parameters
+    + session_id (required, hash, `ASDF`) ... session token.
+
++ Response 200 (application/json)
+
+
+## User Collection [/users]
+### List all Notes [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
+
+### Create a Note [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## Note [/notes/{id}]
+A single Note object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Note [DELETE]
++ Response 204
