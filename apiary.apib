@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: https://secure.hitask.com
+HOST: https://secure.hitask.com/api2/
 
 # hiTask
 
@@ -15,9 +15,6 @@ Authenticate user using user name and password
 
 User has following attributes:
 
-- id: unique user id used to identify this user account
-- level: account level
-- session_id: session token
 
 + Parameters
 
@@ -46,6 +43,8 @@ User has following attributes:
 
 
 
+        
+
 ## Sign Out [/user/signout{session_id}]
 ### Sign Out [GET]
 
@@ -60,41 +59,39 @@ End current session, Close user's session.
 
 Information about user's account, etc.
 
-## User Collection [/users]
-### List all Notes [GET]
+## User [/user]
+
++ Model (application/json)
+    ```js
+
+    {
+      "class": [ "message" ],
+      "properties": { 
+            "message": "Hello World!" 
+      },
+      "links": [
+            { "rel": "self" , "href": "/message" }
+      ]
+    }
+   ```         
+
+### get current user account information [GET]
+
+
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
+            {
+                businessId : 123;
+                businessLevel: 100;
+                email:"name@gmail.com";
+                emailConfirmed : "name@gmail.com";
+                id : 123;
+                isOnline : 1;
+                level : 0;
+                login : john;
+                firstName : Mick;
+                lastName : Johnson;
+            }
 
-### Create a Note [POST]
-+ Request (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
 
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
-
-### Retrieve a Note [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "title": "Pick-up posters from post-office" }
-
-### Remove a Note [DELETE]
-+ Response 204
