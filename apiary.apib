@@ -1,9 +1,11 @@
 FORMAT: 1A
 HOST: https://secure.hitask.com/api2/
 
-# hiTask
+# hiTask API
 
+All calls require api_key parameter.
 
+    
 # Group User Authentication Flow
 
 Operations related to current user's account: authenticate, sign up, etc.
@@ -12,8 +14,6 @@ Operations related to current user's account: authenticate, sign up, etc.
 ### Authenticate [GET]
 
 Authenticate user using user name and password
-
-User has following attributes:
 
 
 + Parameters
@@ -200,7 +200,15 @@ Operations with user's contacts: add, remove, list contacts
             subscription: "BOTH"
         }
         ```
-        
+      
+### Add contact [POST]
+
++ Response 200
+
+### Delete [DELETE]
+
++ Response 200
+
 ## Get all contacts [/contact{includeSelf}]
 ### Get all contacts [GET]
 
@@ -211,13 +219,7 @@ Operations with user's contacts: add, remove, list contacts
     
     [Contact][]
 
-## Add contact [POST]
 
-+ Response 200
-
-## Delete [DELETE]
-
-+ Response 200
 
 ## Search [/contact/search]
 ### Search [GET]
