@@ -93,5 +93,58 @@ Information about user's account, etc.
                 lastName : Johnson;
             }
 
+# Group Item
+
+Operations with items: tasks, projects, notes, files, etc.
+
+## Item [/item]
+
+tasks, projects, notes, files, etc.
+
+
+    
++ Model (application/json)
+
+    ```js
+    {
+      "class": [ "message" ],
+      "properties": { 
+            "message": "Hello World!" 
+      },
+      "links": [
+            { "rel": "self" , "href": "/message" }
+      ]
+    }
+   ```         
+   
+### Get all items [GET]
+
+This method will return array of all items: tasks, events, files including projects
+
++ Response 200
+    
+    [Item][]
+
+### Create new Item [POST]
+
++ Response 200
+
+### Modify Item [PUT]
+
++ Response 200
+
+### DELETE 
+    
++ Response 200
+
+## Get items since time [/item/since{timestamp}]
+### Get items modified since specified time [GET] 
+
++ Parameters
+    + timestamp ... timestamp
+    
++ Response 200
+    
+    [Item][]
 
 
