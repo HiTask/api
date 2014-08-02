@@ -101,8 +101,6 @@ Operations with items: tasks, projects, notes, files, etc.
 
 tasks, projects, notes, files, etc.
 
-
-    
 + Model (application/json)
 
     ```json
@@ -136,9 +134,24 @@ This method will return array of all items: tasks, events, files including proje
 
 + Response 200
 
+    + Description  operation successful
+ 
++ Response 404 
+   + Description   item not found. It may be already deleted or not visible to current user.
+
++ Response 403 
+    + Description  not authorised
+
 ### DELETE 
     
-+ Response 200
++ Response 200 
+
+ 
++ Response 404 
+
+    + Description item not found. It may be already deleted or not visible to current user.
+
++ Response 403 
 
 ## Get items since time [/item/since{timestamp}]
 ### Get items modified since specified time [GET] 
@@ -149,5 +162,90 @@ This method will return array of all items: tasks, events, files including proje
 + Response 200
     
     [Item][]
+
+## Item's history [/item/history?id={item_id}]
+### Get item's history and comments [GET] 
+
++ Response 200
+
+## Add comment to item [/item/comment]
+### Add comment [POST]
+
++ Response 200
+
+### Delete comment [DELETE]
+
++ Response 200
+
+# Group Contact
+
+
+## Contact [/contact]
+
+Operations with user's contacts: add, remove, list contacts
+
++ Model (application/json)
+
+        ```json
+        {
+            email: "user@email.com"
+            emailConfirmed: "user@email.com"
+            firstName: "John"
+            id: 123
+            isOnline: false
+            lastName: "Jackson"
+            level: 100
+            login: "john"
+            pictureHash: "267744510460b6ec63453483f725252"
+            subscription: "BOTH"
+        }
+        ```
+        
+## Get all contacts [/contact{includeSelf}]
+### Get all contacts [GET]
+
++ Parameters
+    + includeSelf (0 or 1) ... Include current user in response.
+    
++ Response 200
+    
+    [Contact][]
+
+## Add contact [POST]
+
++ Response 200
+
+## Delete [DELETE]
+
++ Response 200
+
+## Search [/contact/search]
+### Search [GET]
+
++ Response 200
+
+    [Contact][]
+
+## Invite [/contact/invite]
+### Invite [GET]
+
++ Response 200
+
+## Approve invitation [/contact/approve]
+### Approve invitation or connection [GET]
+
++ Response 200
+
+## Add contact to Business account [/contact/addtobusiness]
+### Add member [GET]
+add contact as member of Business account
+
++ Response 200
+
+## Remove contact from Business account [/contact/removefrombusiness]
+
+### Remove member [GET]
+
++ Response 200
 
 
