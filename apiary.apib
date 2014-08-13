@@ -103,7 +103,8 @@ Permissions schema:
         {"184295":50,
         "ebb6b5fd-2a60-4b08-acf5-6a9a5c5b7367":60,
         "d94cb227-9fd4-46fc-a232-def0f6972d1c":100,
-        "a9e8f8b6-8609-4b09-9b6f-7ac2e502094a":50}
+        "a9e8f8b6-8609-4b09-9b6f-7ac2e502094a":50,
+        "all": 20}
     ```
     
 + Model (application/json)
@@ -139,7 +140,10 @@ This method will return array of all items: tasks, events, files including proje
     [Item][]
 
 
+## Create New Item [/item/{?cascadeAcl}]
 ### Create new Item [POST]
++ Parameters
+    + cascadeAcl (optional, boolean) ... indicates if permissions should be applied down tree for all children
 
 + Request
 
@@ -147,8 +151,10 @@ This method will return array of all items: tasks, events, files including proje
 
 + Response 200
 
+## Modify Item [/item/{id}{?cascadeAcl}]
 ### Modify Item [PUT]
-
++ Parameters
+    + cascadeAcl (optional, boolean) ... indicates if permissions should be applied down tree for all children
    
 + Response 200
 
