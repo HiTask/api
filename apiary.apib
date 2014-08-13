@@ -112,6 +112,13 @@ tasks, projects, notes, files, etc.
       "category":1,
       "color_value":" #ffffff",
       "location": {"longitude":123.1234567,"latitude":-4.0987654321,"address":"123 Some street"}
+      "permission": 50,
+      "permissions": {
+        "ebb6b5fd-2a60-4b08-acf5-6a9a5c5b7367": 60,
+        "d94cb227-9fd4-46fc-a232-def0f6972d1c": 100,
+        "184295": 50,
+        "a9e8f8b6-8609-4b09-9b6f-7ac2e502094a": 50
+      }
     }
    ``` 
    
@@ -127,7 +134,11 @@ This method will return array of all items: tasks, events, files including proje
 
 + Response 200
 
+## Modify item [/item/{id}{?permissions}]
 ### Modify Item [PUT]
+
++ Parameters
+    + permissions (optional, serialized json) ... {"184295":50,"ebb6b5fd-2a60-4b08-acf5-6a9a5c5b7367":60,"d94cb227-9fd4-46fc-a232-def0f6972d1c":100,"a9e8f8b6-8609-4b09-9b6f-7ac2e502094a":50}
 
 + Response 200
 
@@ -139,7 +150,8 @@ This method will return array of all items: tasks, events, files including proje
 + Response 403 
     + Description  not authorised
 
-### DELETE 
+## Delete item [/item/{id}]
+### Delete Item [DELETE]
     
 + Response 200 
 
