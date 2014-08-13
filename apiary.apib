@@ -98,6 +98,14 @@ Operations with items: tasks, projects, notes, files, etc.
 
 tasks, projects, notes, files, etc.
 
+Permissions schema:
+    ```
+        {"184295":50,
+        "ebb6b5fd-2a60-4b08-acf5-6a9a5c5b7367":60,
+        "d94cb227-9fd4-46fc-a232-def0f6972d1c":100,
+        "a9e8f8b6-8609-4b09-9b6f-7ac2e502094a":50}
+    ```
+    
 + Model (application/json)
 
     ```json
@@ -121,7 +129,7 @@ tasks, projects, notes, files, etc.
       }
     }
    ``` 
-   
+
 ### Get all items [GET]
 
 This method will return array of all items: tasks, events, files including projects
@@ -130,20 +138,18 @@ This method will return array of all items: tasks, events, files including proje
     
     [Item][]
 
-## Create new item [/item{?permissions}]
+
 ### Create new Item [POST]
 
-+ Parameters
-    + permissions (optional, serialized json) ... {"184295":50,"ebb6b5fd-2a60-4b08-acf5-6a9a5c5b7367":60,"d94cb227-9fd4-46fc-a232-def0f6972d1c":100,"a9e8f8b6-8609-4b09-9b6f-7ac2e502094a":50}
++ Request
+
+            [Item]
 
 + Response 200
 
-## Modify item [/item/{id}{?permissions}]
 ### Modify Item [PUT]
 
-+ Parameters
-    + permissions (optional, serialized json) ... {"184295":50,"ebb6b5fd-2a60-4b08-acf5-6a9a5c5b7367":60,"d94cb227-9fd4-46fc-a232-def0f6972d1c":100,"a9e8f8b6-8609-4b09-9b6f-7ac2e502094a":50}
-
+   
 + Response 200
 
     + Description  operation successful
@@ -154,7 +160,6 @@ This method will return array of all items: tasks, events, files including proje
 + Response 403 
     + Description  not authorised
 
-## Delete item [/item/{id}]
 ### Delete Item [DELETE]
     
 + Response 200 
