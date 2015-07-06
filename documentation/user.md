@@ -42,7 +42,7 @@ Response values:
 
 End current session
 
-* `GET /user/signout` Close user's session.
+* `GET /user/logout` Close user's session.
 
 Input parameters:
 * session_id: session token
