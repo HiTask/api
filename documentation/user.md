@@ -133,6 +133,6 @@ Input parameters:
 * `PUT /user`  Update current user account information
 
 Input parameters:
-* firstName: First Name
-* lastName: Last Name
+* firstname: First Name
+* lastname: Last Name
 * email: e-mail address. If email address is different from previously stored, an email message with address confirmation will be sent
