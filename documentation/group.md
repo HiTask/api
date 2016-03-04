@@ -12,9 +12,21 @@ Get list of groups
 ### Example response
 
 ```js
+[
 {
-
+id: "q9xsalg4tc7hrbaddh56fxg1ekuqrci39g8i2y7krmwa2qny8s5",
+name: "Everyone",
+code: "EVERYONE",
+color: "#FFFFFF",
+members: [
+1866247,
+1861630,
+1866033,
+1286619
+],
+type: 1
 }
+]
 ```
 
 ### Response fields:
@@ -30,15 +42,19 @@ Get list of groups
         <td>long</td>
         <td>Globally unique primary identifier </td>
     </tr>
- 
+     <tr>
+        <td><code>name</code></td>
+        <td>String</td>
+        <td>Group name</td>
+    </tr>
+     <tr>
+        <td><code>type</code></td>
+        <td>int</td>
+        <td>Group special type. If =1 then this is "Everyone" group containing all team members.</td>
+    </tr>
 </table>
 
 
-
-Add tag
-------------
-
-* `POST	/tag`
 
 
 Add Group
