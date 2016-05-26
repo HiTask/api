@@ -48,7 +48,7 @@ Item  object properties
         <td><code>color</code></td>
         <td>int</td>
         <td>0</td>
-        <td>Color tag</td>
+        <td>Color tag (index of predefined colors) used for items (tasks, events, notes, ..). Onde of these colors: [no color, '#FB7E6E', '#F8B957', '#F3DF5B', '#C2D95B', '#6CB4FF', '#CAA4DF', '#B8B8B8']</td>
     </tr> 
     <tr>
         <td><code>color_value</code></td>
