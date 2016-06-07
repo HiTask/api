@@ -63,4 +63,4 @@ API methods
 * [Contact:](https://github.com/hitask/api/blob/master/documentation/contact.md) information about contacts
 * [Group:](https://github.com/hitask/api/blob/master/documentation/group.md) contact groups
 * [Tag:](https://github.com/hitask/api/blob/master/documentation/tag.md)  Tag: list tags, add, delete, update tags
-
+* [Team:](https://github.com/hitask/api/blob/master/documentation/team.md) Team and team members
