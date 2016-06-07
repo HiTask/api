@@ -14,7 +14,7 @@ Team members and team properties
 Parameter | Type | Description
 ------------ | ------------- | ------------
 email | string | Valid email address. **Required**
-
+name | string | Full name. First name and last name separated by space. e.g. "Firstname Lastname"
 
 ### Response codes
 
