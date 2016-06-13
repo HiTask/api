@@ -218,7 +218,17 @@ Create
 
 * `POST    /item` will create new item
 
+### Response codes
 
+HTTP code | API Error code | Description
+------------ | ------------- | ------------
+200 |  | Created/updated
+400 | 73 | Unable to add {principal X} because project/parent item is not shared with {principal X}.
+400 | 74 | {principal X} permission can not be {modified/added/removed} because it will conflict with parent {permission X} permissions.
+400 | 75 | {user X} can not be {assignee/participant} because they don't have access to project {project name}.
+400 | 76 | Owner {owner name} is not allowed to change own permission.
+400 | 77 | Permission {principal X} downgrade to {permission X} is not allowed because parent has {permission Y} for this principal.
+400 | 78 | Cannot remove {assignee/participant} {user name} permission.
 
 Update
 ------------
