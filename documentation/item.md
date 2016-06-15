@@ -1,11 +1,10 @@
-Item
-========
+# Item
 
-Operations with items: tasks, projects, notes, files, etc.
+Operations with items: tasks, events, projects, notes, files.
 
 
-Item  object properties
-------------
+## Item  object properties
+
 
 <table>
     <tr>
@@ -196,29 +195,33 @@ Item  object properties
     </tr>
 </table>
 
+# Methods 
 
-Get array of items
-------------
+## 1 Get array of items
+
 
 * `GET    /item` 
 
 This method will return array of all items: tasks, events, files including projects
 
 
-Get delta update of items
-------------
+### 1.2 Get delta update of items
 
 * `GET  	/item/since/{timestamp}`
 
 Returns list of items that were changed or added since specified date
 
 
-Create
-------------
+## 2 Create item
 
 * `POST    /item` will create new item
 
-### Response codes
+
+## 3 Update
+
+* `PUT    /item` will update (modify) item
+
+### Response codes for Create and Update
 
 HTTP code | API Error code | Description
 ------------ | ------------- | ------------
@@ -230,14 +233,8 @@ HTTP code | API Error code | Description
 400 | 77 | Permission {principal X} downgrade to {permission X} is not allowed because parent has {permission Y} for this principal.
 400 | 78 | Cannot remove {assignee/participant} {user name} permission.
 
-Update
-------------
 
-* `PUT    /item` will update (modify) item
-
-
-Delete
-------------
+## 4 Delete
 
 * `DELETE    /item/{id}` will delete item
 
@@ -252,21 +249,18 @@ Possible HTTP return responses:
 * 404 item not found. It may be already deleted or not visible to current user.
 * 403 not authorised
 
-History
------------
+## 5 History
 
-Retrieve item history including comments:
+### 5.1 Retrieve item history including comments:
 
 * `GET    /item/history?id={item id}` 
 
-Add comment
-------------
+### 5.2 Add comment
 
 * `POST    /item/comment` will add a new comment to the item
 
 Parameters: id: item id, message: comment body text
 
-Delete comment
-------------
+### 5.3 Delete comment
 
 * `DELETE    /item/comment` will delete comment
