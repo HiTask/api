@@ -185,7 +185,7 @@ Operations with items: tasks, events, projects, notes, files.
         <td><code>instances</code></td>
         <td>array[item_instance]</td>
         <td>[]</td>
-        <td>array of instances for recurring item</td>
+        <td>array of instances for recurring item. at PUT/POST requests this field is ignored by the server.</td>
     </tr>
     <tr>
         <td><code>location</code></td>
