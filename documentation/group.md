@@ -7,7 +7,7 @@ Operations with user groups. Organize team and contacts into groups.
 Get list of groups
 ------------
 
-* `GET 	/groups` will return list of user's groups and contacts
+* `GET 	/group` will return list of user's groups and contacts
 
 ### Example response
 
