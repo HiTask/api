@@ -1,11 +1,12 @@
-Team
-========
+# Team
 
 Team members and team properties
 
+## 1. Get list of team members
 
-1. Invite to join team account
-------------
+* `GET /team`
+
+## 2. Invite to join team account
 
 * `POST 	/team/member` 
 
@@ -25,3 +26,21 @@ HTTP code | API Error code | Description
 412 | 16 | Already a member, (this email address is already member of Team)
 400 | 12 | User licenses exceeded
 
+
+## 3. Remove team member
+
+Removes team member or invited user
+
+* `DELETE /team/member`
+
+### Parameters
+
+Parameter | Type | Description
+------------ | ------------- | ------------
+id | string | 
+
+## 4. Resend invitation
+
+In case user did not receive email invitation use this method to re-send invitation again
+
+* `POST /team/member/resend`
