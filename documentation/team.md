@@ -37,7 +37,15 @@ Removes team member or invited user
 
 Parameter | Type | Description
 ------------ | ------------- | ------------
-id | string | 
+id | integer | member user id
+
+### Response codes
+
+HTTP code | API Error code | Description
+------------ | ------------- | ------------
+200 |  | member removed
+250 | 1 | member not found
+400 | 4 | "id" parameter is mandatory
 
 ## 4. Resend invitation
 
