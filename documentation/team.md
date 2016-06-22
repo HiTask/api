@@ -45,7 +45,7 @@ id | integer | member user id
 HTTP code | API Error code | Description
 ------------ | ------------- | ------------
 200 |  | member removed
-250 | 1 | member not found
+404 | 1 | member not found
 400 | 4 | "id" parameter is mandatory
 
 ## 4. Resend invitation
