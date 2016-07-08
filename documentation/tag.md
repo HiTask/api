@@ -1,13 +1,13 @@
-Tag
-========
+# Tag
+
 
 Operations with tags: add, remove, list tags
 
 
-Get list of user's tags
-------------
+## 1. Get list of tags
 
-* `GET 	/tag` will return list of user's tags
+
+* `GET 	/tag` will return list of tags
 
 ### Example response
 
@@ -18,42 +18,34 @@ Get list of user's tags
 ```
 
 ### Response fields:
-
-<table>
-    <tr>
-        <th>Field</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td><code>id</code></td>
-        <td>long</td>
-        <td>Globally unique primary identifier for a tag.</td>
-    </tr>
- 
-</table>
+Field | Type | Description
+------------ | ------------- | ------------
+<code>id</code>| long | Globally unique primary identifier for a tag.
 
 
+### Response codes
 
-Add tag
+HTTP code | API Error code | Description
+------------ | ------------- | ------------
+200 |  | 
+ | | 
+
+
+## 2. Add tag
 ------------
 
 * `POST	/tag`
 
-Update tag
+## 3. Update tag
 ------------
 
 * `PUT    /tag/{id}`
 
 
-Delete
+## 4. Delete
 ------------
 
 * `DELETE	/tag/{id}` 
 
 
-List tags
-------------
-
-* `GET		/tag` 
 
