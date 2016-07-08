@@ -112,5 +112,22 @@ HTTP code | API Error code | Description
 
 * `DELETE	/tag/{id}` 
 
+### Mandatory params:
+Param | Type | Description
+------------ | ------------- | ------------
+<code>id</code>| long | Identifer of tag (param is part of the URL).
 
+### Example response
+
+```js
+{"response_status":0}
+```
+
+### Response codes
+
+HTTP code | API Error code | Description
+------------ | ------------- | ------------
+200 |  | Tag deleted.
+404 | 1 | Tag not found.
+403 | 3 | No enough permissions to delete shared tag.
 
