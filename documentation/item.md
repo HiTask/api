@@ -87,8 +87,8 @@ Operations with items: tasks, events, projects, notes, files.
     </tr> 
         <tr>
         <td><code>participants</code></td>
-        <td>array[long]</td>
-        <td>[322,413]</td>
+        <td>comma separated list of user identifiers</td>
+        <td>322,413</td>
         <td>array of user id for this item participants</td>
     </tr>    
          <tr>
@@ -177,8 +177,8 @@ Operations with items: tasks, events, projects, notes, files.
     </tr>
                         <tr>
         <td><code>tags</code></td>
-        <td>array[string]</td>
-        <td>["work","home"]</td>
+        <td>comma separated list of tags</td>
+        <td>"work","home"</td>
         <td>array or tags added to item</td>
     </tr>
      <tr>
