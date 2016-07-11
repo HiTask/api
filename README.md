@@ -22,7 +22,7 @@ You are required to provide your API Key as a parameter for some methods, for ex
 API Endpoint URL
 ---------------
 
-API endpoint is `https://hitask.com/api/{method}` where {method} is the name of API method. 
+API endpoint is `https://hitask.com/api/v2/{method}` where {method} is the name of API method. 
 
 
 Authentication and security
