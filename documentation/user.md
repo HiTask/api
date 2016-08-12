@@ -140,7 +140,7 @@ Input parameters:
 
 ## Update User Avatar
 
-* `PUT /user/picture`  Update current user avatar
+* `POST /user/picture`  Update current user avatar
 
 Input parameters:
 * picture: Picture data
@@ -162,6 +162,14 @@ Error codes:
 Response:
 
 JSON object with one property "hash": unique picture identifier.
-<code>
+
+```js
 {"hash":"4b0c75c8-14cc-49b2-80aa-b49f5cf62daf"}
-</code>
+```
+
+## Update User Avatar
+
+* `DELETE /user/picture`  Update current user avatar
+
+Input parameters:
+* returninfo: (optional) if "true" then full account info will be returned as described in `GET /user`
