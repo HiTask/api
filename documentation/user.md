@@ -136,3 +136,32 @@ Input parameters:
 * firstname: First Name
 * lastname: Last Name
 * email: e-mail address. If email address is different from previously stored, an email message with address confirmation will be sent
+
+
+## Update User Avatar
+
+* `PUT /user/picture`  Update current user avatar
+
+Input parameters:
+* picture: Picture data
+* x: (Optional) X coordinate of top left corner of square that will be used to crop the picture (x, y and width must be specified to crop the picture)
+* y: (Optional) Y coordinate of top left corner of square that will be used to crop the picture (x, y and width must be specified to crop the picture)
+* width: (Optional) Width of square that will be used to crop the picture (x, y and width must be specified to crop the picture)
+
+Restrictions:
+* max picture size is 1MB
+* allowed picture formats: "gif", "jpeg", "jpg", "png"
+
+Error codes:
+* HTTP 400 and code 32: picture upload failed, retry required
+* HTTP 400 and code 34: crop parameters are invalid
+* HTTP 400 and code 6: uploaded data is not a valid picture
+* HTTP 400 and code 5: picture format is not valid
+* HTTP 400 and code 25: picture exceeded maximum allowed size
+
+Response:
+
+JSON object with one property "hash": unique picture identifier.
+<code>
+{"hash":"4b0c75c8-14cc-49b2-80aa-b49f5cf62daf"}
+</code>
