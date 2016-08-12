@@ -167,9 +167,9 @@ JSON object with one property "hash": unique picture identifier.
 {"hash":"4b0c75c8-14cc-49b2-80aa-b49f5cf62daf"}
 ```
 
-## Update User Avatar
+## Delete User Avatar
 
-* `DELETE /user/picture`  Update current user avatar
+* `DELETE /user/picture`  Delete current user avatar
 
 Input parameters:
 * returninfo: (optional) if "true" then full account info will be returned as described in `GET /user`
