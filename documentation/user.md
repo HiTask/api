@@ -134,13 +134,14 @@ Input parameters:
         <td>Integer</td>
         <td>
 	    Type of user avatar:
-	    * 0 - avatar is missing (only happens if generation failed)
-	    * 1 - avatar is auto-generating (searching social sources or auto generating: only happens if user registered few seconds ago)
-	    * 2 - Auto generated (initials on background)
-	    * 10 ExternalProviderId.GOOGLE
-	    * 11 ExternalProviderId.FACEBOOK
-	    * 100 "user" - User uploaded
-	    * 1000 "unknown" - Unknown: Avatar updated before this feature implementation
+	    * 0 Avatar is missing (only happens if generation failed)
+	    * 1 Avatar is auto-generating (searching social sources or auto generating: only happens if user registered few seconds ago)
+	    * 2 Auto generated (initials on background)
+	    * 10 Google
+	    * 11 Facebook
+	    * 12 Gravatar
+	    * 100 User uploaded
+	    * 1000 Unknown
         </td>
     </tr>
 </table>
