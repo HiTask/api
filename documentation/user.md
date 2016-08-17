@@ -56,16 +56,18 @@ Input parameters:
 
 ```js
 {
-    businessId : 123;
-    businessLevel : 100;
-	email : "name@gmail.com";
-	emailConfirmed : "name@gmail.com";
-	id : 123;
-	isOnline : 1;
-	level : 0;
-	login : john;
-	firstName : Mick;
-	lastName : Johnson;
+    businessId : 123,
+    businessLevel : 100,
+	email : "name@gmail.com",
+	emailConfirmed : "name@gmail.com",
+	id : 123,
+	isOnline : 1,
+	level : 0,
+	login : "john",
+	firstName : "Mick",
+	lastName : "Johnson",
+	pictureSource: 1000,
+	pictureHash: "4b0c75c8-14cc-49b2-80aa-b49f5cf62daf"
 }
 ```
 
@@ -121,6 +123,25 @@ Input parameters:
         <td><code>businessLevel</code></td>
         <td>Integer</td>
         <td>MEmbership level of user in Business account</td>
+    </tr>
+    <tr>
+        <td><code>pictureHash</code></td>
+        <td>String</td>
+        <td>Unique avatar identifier that should be used in order to build user avatar URL</td>
+    </tr>
+    <tr>
+        <td><code>pictureSource</code></td>
+        <td>Integer</td>
+        <td>
+	    Type of user avatar:
+	    * 0 - avatar is missing (only happens if generation failed)
+	    * 1 - avatar is auto-generating (searching social sources or auto generating: only happens if user registered few seconds ago)
+	    * 2 - Auto generated (initials on background)
+	    * 10 ExternalProviderId.GOOGLE
+	    * 11 ExternalProviderId.FACEBOOK
+	    * 100 "user" - User uploaded
+	    * 1000 "unknown" - Unknown: Avatar updated before this feature implementation
+        </td>
     </tr>
 </table>
 
