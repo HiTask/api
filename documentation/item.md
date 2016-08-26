@@ -287,3 +287,80 @@ Parameters: id: item id, message: comment body text
 ### 5.3 Delete comment
 
 * `DELETE    /item/comment` will delete comment
+
+## 6 Delete multiple
+
+* `POST    /item/deletemultiple` will delete items
+
+Parameters:
+* id: comma separated list of item identifiers (example: id=1,2,3).
+
+User performing request must have sufficient rights to delete specified items.
+No error will be rised and item delete request simply ignored if user does not have rights to delete specific item.
+
+Possible HTTP return responses:
+
+* 200 operation successful
+* 400 invalid format of list of identifiers
+
+## 7 Archive item
+
+* `POST    /item/archive` will archive item
+
+Parameters:
+* id or guid: id or guid of item to archive.
+
+User performing request must have sufficient rights to archive specified item.
+
+Possible HTTP return responses:
+
+* 200 operation successful
+* 403 not authorised
+* 404 item not found; it may be already archived or not visible to current user
+
+## 8 Restore item from archive
+
+* `GET    /archive/restore` will restore item from archive
+
+Parameters:
+* id or guid: id or guid of item to restore.
+
+User performing request must have sufficient rights to restore specified item.
+
+Possible HTTP return responses:
+
+* 200 operation successful
+* 403 not authorised
+* 404 item not found
+* 507 limit of items exceeded for current account
+
+## 9 Restore copy of item from archive
+
+* `GET    /archive/restorecopy` will restore copy of item from archive
+
+Parameters:
+* id or guid: id or guid of item which copy to restore.
+
+User performing request must have sufficient rights to restore specified item.
+
+Possible HTTP return responses:
+
+* 200 operation successful
+* 403 not authorised
+* 404 item not found
+* 507 limit of items exceeded for current account
+
+## 10 Archive multiple
+
+* `POST    /item/archivemultiple` will archive multiple items
+
+Parameters:
+* id: comma separated list of item identifiers (example: id=1,2,3).
+
+User performing request must have sufficient rights to archive specified items.
+No error will be rised and item archive request simply ignored if user does not have rights to archive specific item.
+
+Possible HTTP return responses:
+
+* 200 operation successful
+* 400 invalid format of list of identifiers
