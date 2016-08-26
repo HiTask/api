@@ -109,25 +109,16 @@ Operations with items: tasks, events, projects, notes, files.
         <td>0</td>
         <td>Indicator that this item is "all day" event. Only date without time should be used from start/end date field..</td>
     </tr>
-          <tr>
-        <td><code>reminder_enabled</code></td>
-        <td>int</td>
+    <tr>
+        <td><code>alerts</code></td>
+        <td>JSON array</td>
         <td>0</td>
-        <td>Enable alarm/reminder.</td>
+        <td>
+            Create/Update/Delete reminders:<br />
+            <code>[{"timeType":4,"time":0,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":4,"time":5,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":3,"time":1,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":1,"time":0,"timeSpecified":"2016-08-31T11:00:00.000+04:00","repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true}]</code>
+        </td>
     </tr>    
-           <tr>
-        <td><code>reminder_time</code></td>
-        <td>int</td>
-        <td>5</td>
-        <td>When alarm is happening. Time before start_date.</td>
-    </tr>   
-             <tr>
-        <td><code>reminder_time_type</code></td>
-        <td>String</td>
-        <td>m</td>
-        <td>reminder_time measure: m:minutes, h: hours, d: days.</td>
-    </tr>     
-              <tr>
+    <tr>
         <td><code>shared</code></td>
         <td>int</td>
         <td>0</td>
