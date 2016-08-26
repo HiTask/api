@@ -112,10 +112,27 @@ Operations with items: tasks, events, projects, notes, files.
     <tr>
         <td><code>alerts</code></td>
         <td>JSON array</td>
-        <td>0</td>
+        <td><code>[{"timeType":4,"time":0,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":4,"time":5,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":3,"time":1,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":1,"time":0,"timeSpecified":"2016-08-31T11:00:00.000+04:00","repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true}]</code></td>
         <td>
             Create/Update/Delete reminders:<br />
-            <code>[{"timeType":4,"time":0,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":4,"time":5,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":3,"time":1,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":1,"time":0,"timeSpecified":"2016-08-31T11:00:00.000+04:00","repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true}]</code>
+            * Create: simply add new alert to array and put data to server
+            * Update: simply update existing alert in array (id must be specified in alert object) and put data to server
+            * Delete: simply remove alert from array and put data to server
+            Alert object description:
+            <code>
+                {
+                    "id":900, // optional: if id is not specified then new alert will be created, or existing updated otherwise
+                    "timeType":4, // mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
+                    "time":0, // mandatory if timeType in [2, 3, 4]
+                    "timeSpecified":null, // mandatory if timeType=1
+                    "repeat":0, // optional: how many times reminder should be repeated
+                    "repeatInterval":0, // optional: repeat interval in minutes
+                    "sound":true, // optional: play sound
+                    "alert":true, // optional: display notification in desktop/browser version of application
+                    "email":true, // optional: send email
+                    "push":true // optional: send push notification to mobile device
+                }
+            </code>
         </td>
     </tr>    
     <tr>
