@@ -112,7 +112,22 @@ Operations with items: tasks, events, projects, notes, files.
     <tr>
         <td><code>alerts</code></td>
         <td>JSON array</td>
-        <td><code>[{"timeType":4,"time":0,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":4,"time":5,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":3,"time":1,"timeSpecified":null,"repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true},{"timeType":1,"time":0,"timeSpecified":"2016-08-31T11:00:00.000+04:00","repeat":0,"repeatInterval":0,"sound":true,"alert":true,"email":true,"push":true}]</code></td>
+        <td><code>
+            [
+                {"timeType":4,"time":0,"timeSpecified":null,"repeat":0,
+                "repeatInterval":0,"sound":true,"alert":true,
+                "email":true,"push":true},
+                {"timeType":4,"time":5,"timeSpecified":null,"repeat":0,
+                "repeatInterval":0,"sound":true,"alert":true,"email":true,
+                "push":true},
+                {"timeType":3,"time":1,"timeSpecified":null,"repeat":0,
+                "repeatInterval":0,"sound":true,"alert":true,"email":true,
+                "push":true},
+                {"timeType":1,"time":0,"timeSpecified":"2016-08-31T11:00:00.000+04:00",
+                "repeat":0,"repeatInterval":0,"sound":true,"alert":true,
+                "email":true,"push":true}
+            ]
+        </code></td>
         <td>
             Create/Update/Delete reminders:<br />
             * Create: simply add new alert to array and put data to server
@@ -124,7 +139,7 @@ Operations with items: tasks, events, projects, notes, files.
                     "id":900, // optional: if id is not specified then new alert will be created, or existing updated otherwise
                     "timeType":4, // mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
                     "time":0, // mandatory if timeType in [2, 3, 4]
-                    "timeSpecified":null, // mandatory if timeType=1
+                    "timeSpecified":null, // mandatory if timeType=1, format is same as for start_date and end_date of item object
                     "repeat":0, // optional: how many times reminder should be repeated
                     "repeatInterval":0, // optional: repeat interval in minutes
                     "sound":true, // optional: play sound
