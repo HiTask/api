@@ -76,8 +76,8 @@ Input parameters:
 |Field|Type|Description|
 |-----|----|-----------|
 |<code>id</code>|long|Globally unique primary identifier for a user. This is an integer, but it is recommended to handle it as String to avoid limitations with the way JavaScript integers are expressed.|
-|<code>accountType</code>|String|User's account type: <code>TEAM_BASIC, TEAM_BUSINESS, PERSONAL_FREE, PERSONAL_PREMIUM</code></
-    |><code>login</code>|String|user login id|
+|<code>accountType</code>|String|User's account type: <code>TEAM_BASIC, TEAM_BUSINESS, PERSONAL_FREE, PERSONAL_PREMIUM</code>|
+|<code>login</code>|String|user login id|
 |<code>firstName</code>|String|user's First Name|
 |<code>lastName</code>       |String        |user's Last Name|
 |<code>emailConfirmed</code>        |String        |Email address that was confirmed by the user. (By clicking confirmaiton link sent to this email address.)|
