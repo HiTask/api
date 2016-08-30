@@ -73,78 +73,44 @@ Input parameters:
 
 ### Response fields:
 
-<table>
-    <tr>
-        <th>Field</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td><code>id</code></td>
-        <td>long</td>
-        <td>Globally unique primary identifier for a user. This is an integer, but it is recommended to handle it as String to avoid limitations with the way JavaScript integers are expressed.</td>
-    </tr>
-    <tr>
-        <td><code>accountType</code></td>
-        <td>String</td>
-        <td>User's account type: <code>TEAM_BASIC, TEAM_BUSINESS, PERSONAL_FREE, PERSONAL_PREMIUM</code></td>
-    </tr> 
-    <tr>
-        <td><code>login</code></td>
-        <td>String</td>
-        <td>user login id</td>
-    </tr>
-    <tr>
-        <td><code>firstName</code></td>
-        <td>String</td>
-        <td>user's First Name</td>
-    </tr>
-    <tr>
-        <td><code>lastName</code></td>
-        <td>String</td>
-        <td>user's Last Name</td>
-    </tr>
-    <tr>
-        <td><code>emailConfirmed</code></td>
-        <td>String</td>
-        <td>Email address that was confirmed by the user. (By clicking confirmaiton link sent to this email address.)</td>
-    </tr>
-    <tr>
-        <td><code>email</code></td>
-        <td>String</td>
-        <td>Email address that user entered but not confirmed. Do not send emails to this address as it may not be confirmed.</td>
-    </tr>
-    <tr>
-        <td><code>businessId</code></td>
-        <td>Integer</td>
-        <td>unique identifier of user's Business group account, if applicable </td>
-    </tr>
-    <tr>
-        <td><code>businessLevel</code></td>
-        <td>Integer</td>
-        <td>MEmbership level of user in Business account</td>
-    </tr>
-    <tr>
-        <td><code>pictureHash</code></td>
-        <td>String</td>
-        <td>Unique avatar identifier that should be used in order to build user avatar URL</td>
-    </tr>
-    <tr>
-        <td><code>pictureSource</code></td>
-        <td>Integer</td>
-        <td>
-	    Type of user avatar:
-	    * 0 Avatar is missing (only happens if generation failed)
-	    * 1 Avatar is auto-generating (searching social sources or auto generating: only happens if user registered few seconds ago)
-	    * 2 Auto generated (initials on background)
-	    * 10 Google
-	    * 11 Facebook
-	    * 12 Gravatar
-	    * 100 User uploaded
-	    * 1000 Unknown
-        </td>
-    </tr>
-</table>
+|Field|Type|Description|
+|-----|----|-----------|
+|<code>id</code>|long|Globally unique primary identifier for a user. This is an integer, but it is recommended to handle it as String to avoid limitations with the way JavaScript integers are expressed.|
+|<code>accountType</code>|String|User's account type: <code>TEAM_BASIC, TEAM_BUSINESS, PERSONAL_FREE, PERSONAL_PREMIUM</code></
+    |><code>login</code>|String|user login id|
+|<code>firstName</code>|String|
+        |user's First Name|
+|<code>lastName</code>|
+        |String|
+        |user's Last Name|
+|<code>emailConfirmed</code>|
+        |String|
+        |Email address that was confirmed by the user. (By clicking confirmaiton link sent to this email address.)|
+|<code>email</code>|
+        |String|
+        |Email address that user entered but not confirmed. Do not send emails to this address as it may not be confirmed.|
+|<code>businessId</code>|
+        |Integer|
+        |unique identifier of user's Business group account, if applicable |
+|<code>businessLevel</code>|
+        |Integer|
+        |MEmbership level of user in Business account|
+|<code>pictureHash</code>|
+        |String|
+        |Unique avatar identifier that should be used in order to build user avatar URL|
+|<code>pictureSource</code>|Integer| Type of user avatar: See below 
+
+#### Type of user avatar
+
+* 0 Avatar is missing (only happens if generation failed)
+* 1 Avatar is auto-generating (searching social sources or auto generating: only happens if user registered few seconds ago)
+* 2 Auto generated (initials on background)
+* 10 Google
+* 11 Facebook
+* 12 Gravatar
+* 100 User uploaded
+* 1000 Unknown|
+    
 
 
 
