@@ -78,27 +78,14 @@ Input parameters:
 |<code>id</code>|long|Globally unique primary identifier for a user. This is an integer, but it is recommended to handle it as String to avoid limitations with the way JavaScript integers are expressed.|
 |<code>accountType</code>|String|User's account type: <code>TEAM_BASIC, TEAM_BUSINESS, PERSONAL_FREE, PERSONAL_PREMIUM</code></
     |><code>login</code>|String|user login id|
-|<code>firstName</code>|String|
-        |user's First Name|
-|<code>lastName</code>|
-        |String|
-        |user's Last Name|
-|<code>emailConfirmed</code>|
-        |String|
-        |Email address that was confirmed by the user. (By clicking confirmaiton link sent to this email address.)|
-|<code>email</code>|
-        |String|
-        |Email address that user entered but not confirmed. Do not send emails to this address as it may not be confirmed.|
-|<code>businessId</code>|
-        |Integer|
-        |unique identifier of user's Business group account, if applicable |
-|<code>businessLevel</code>|
-        |Integer|
-        |MEmbership level of user in Business account|
-|<code>pictureHash</code>|
-        |String|
-        |Unique avatar identifier that should be used in order to build user avatar URL|
-|<code>pictureSource</code>|Integer| Type of user avatar: See below 
+|<code>firstName</code>|String|user's First Name|
+|<code>lastName</code>       |String        |user's Last Name|
+|<code>emailConfirmed</code>        |String        |Email address that was confirmed by the user. (By clicking confirmaiton link sent to this email address.)|
+|<code>email</code>        |String        |Email address that user entered but not confirmed. Do not send emails to this address as it may not be confirmed.|
+|<code>businessId</code>        |Integer        |unique identifier of user's Business group account, if applicable |
+|<code>businessLevel</code>        |Integer        |MEmbership level of user in Business account|
+|<code>pictureHash</code>        |String        |Unique avatar identifier that should be used in order to build user avatar URL|
+|<code>pictureSource</code>|Integer| Type of user avatar: See below  |
 
 #### Type of user avatar
 
