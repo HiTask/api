@@ -33,7 +33,7 @@ Operations with items: tasks, events, projects, notes, files.
 |<code>priority</code>        |int        |20000        |Arbitrary priority. 10000-19999:low, 20000-29999:normal, 30000:high. Default: 20000 (normal)    |
 |<code>tags</code>        |comma separated list of tags        |"work","home"        |array or tags added to item    |
 |<code>instances</code>        |array[item_instance]        |[]        |array of instances for recurring item. at PUT/POST requests this field is ignored by the server.    |
-|<code>location</code>        |object        |```{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}  ```      |Map that contains long/lat coordinates and address    |
+|<code>location</code>        |object        |```{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}```      |Map that contains long/lat coordinates and address    |
 
 ### Alerts structure
 
@@ -169,7 +169,7 @@ Possible HTTP return responses:
 * 403 not authorised
 * 404 item not found; it may be already archived or not visible to current user
 
-## 6.2. Restore item from archive
+### 6.2. Restore item from archive
 
 * `GET    /archive/restore` will restore item from archive
 
@@ -185,7 +185,7 @@ Possible HTTP return responses:
 * 404 item not found
 * 507 limit of items exceeded for current account
 
-## 6.3. Restore copy of item from archive
+### 6.3. Restore copy of item from archive
 
 * `GET    /archive/restorecopy` will restore copy of item from archive
 
