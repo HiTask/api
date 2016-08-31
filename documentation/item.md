@@ -22,7 +22,7 @@ Operations with items: tasks, events, projects, notes, files.
 |<code>participants</code>        |comma separated list of user identifiers        |322,413        |array of user id for this item participants    |    
 |<code>start_date</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Start date and time for this item. Default:null.    | |<code>end_date</code>        |Date        |2012-03-15T19:00:00.000+10:00        |End date and time for this item. Default:null.    |
 |<code>is_all_day</code>        |int        |0        |Indicator that this item is "all day" event. Only date without time should be used from start/end date field..    |
-|<code>alerts</code>        |JSON array        |  See "Alerts" below    |             |    
+|<code>alerts</code>        |JSON array        |  See "Alerts" below    | |    
 |<code>shared</code>        |int        |0        |0: Item is private. 1: item is shared, visile to team memebrs (Business account feature)    |
 |<code>time_last_update</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was last changed (updated).    |
 |<code>time_create</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was created.    |
@@ -33,7 +33,7 @@ Operations with items: tasks, events, projects, notes, files.
 |<code>priority</code>        |int        |20000        |Arbitrary priority. 10000-19999:low, 20000-29999:normal, 30000:high. Default: 20000 (normal)    |
 |<code>tags</code>        |comma separated list of tags        |"work","home"        |array or tags added to item    |
 |<code>instances</code>        |array[item_instance]        |[]        |array of instances for recurring item. at PUT/POST requests this field is ignored by the server.    |
-|<code>location</code>        |object        |{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}        |Map that contains long/lat coordinates and address    |
+|<code>location</code>        |object        |```{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}  ```      |Map that contains long/lat coordinates and address    |
 
 ### Alerts structure
 
@@ -45,42 +45,42 @@ Create/Update/Delete reminders:<br />
 
 Alert object description:
 ```js
-                {
-                    "id":900, // optional: if id is not specified then new alert will be created, or existing updated otherwise
-                    "timeType":4, // mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
-                    "time":0, // mandatory if timeType in [2, 3, 4]
-                    "timeSpecified":null, // mandatory if timeType=1, format is same as for start_date and end_date of item object
-                    "repeat":0, // optional: how many times reminder should be repeated
-                    "repeatInterval":0, // optional: repeat interval in minutes
-                    "sound":true, // optional: play sound
-                    "alert":true, // optional: display notification in desktop/browser version of application
-                    "email":true, // optional: send email
-                    "push":true // optional: send push notification to mobile device
-                }
+    {
+        "id":900, // optional: if id is not specified then new alert will be created, or existing updated otherwise
+        "timeType":4, // mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
+        "time":0, // mandatory if timeType in [2, 3, 4]
+        "timeSpecified":null, // mandatory if timeType=1, format is same as for start_date and end_date of item object
+        "repeat":0, // optional: how many times reminder should be repeated
+        "repeatInterval":0, // optional: repeat interval in minutes
+        "sound":true, // optional: play sound
+        "alert":true, // optional: display notification in desktop/browser version of application
+        "email":true, // optional: send email
+        "push":true // optional: send push notification to mobile device
+    }
 ```
-            
+
 #### Example
 
 ```js
-            [
-                {"timeType":4,"time":0,"timeSpecified":null,"repeat":0,
-                "repeatInterval":0,"sound":true,"alert":true,
-                "email":true,"push":true},
-                {"timeType":4,"time":5,"timeSpecified":null,"repeat":0,
-                "repeatInterval":0,"sound":true,"alert":true,"email":true,
-                "push":true},
-                {"timeType":3,"time":1,"timeSpecified":null,"repeat":0,
-                "repeatInterval":0,"sound":true,"alert":true,"email":true,
-                "push":true},
-                {"timeType":1,"time":0,"timeSpecified":"2016-08-31T11:00:00.000+04:00",
-                "repeat":0,"repeatInterval":0,"sound":true,"alert":true,
-                "email":true,"push":true}
-            ]
+[
+    {"timeType":4,"time":0,"timeSpecified":null,"repeat":0,
+    "repeatInterval":0,"sound":true,"alert":true,
+    "email":true,"push":true},
+    {"timeType":4,"time":5,"timeSpecified":null,"repeat":0,
+    "repeatInterval":0,"sound":true,"alert":true,"email":true,
+    "push":true},
+    {"timeType":3,"time":1,"timeSpecified":null,"repeat":0,
+    "repeatInterval":0,"sound":true,"alert":true,"email":true,
+    "push":true},
+    {"timeType":1,"time":0,"timeSpecified":"2016-08-31T11:00:00.000+04:00",
+    "repeat":0,"repeatInterval":0,"sound":true,"alert":true,
+    "email":true,"push":true}
+]
 ```
         
 # Methods 
 
-## 1 Get array of items
+## 1. Get array of items
 
 
 * `GET    /item` 
@@ -95,12 +95,12 @@ This method will return array of all items: tasks, events, files including proje
 Returns list of items that were changed or added since specified date
 
 
-## 2 Create item
+## 2. Create Item
 
 * `POST    /item` will create new item
 
 
-## 3 Update
+## 3. Update Item
 
 * `PUT    /item` will update (modify) item
 
@@ -117,7 +117,7 @@ HTTP code | API Error code | Description
 400 | 78 | Cannot remove {assignee/participant} {user name} permission.
 
 
-## 4 Delete
+## 4. Delete
 
 * `DELETE    /item/{id}` will delete item
 
@@ -132,7 +132,7 @@ Possible HTTP return responses:
 * 404 item not found. It may be already deleted or not visible to current user.
 * 403 not authorised
 
-## 5 History
+## 5. History
 
 ### 5.1 Retrieve item history including comments:
 
@@ -148,22 +148,13 @@ Parameters: id: item id, message: comment body text
 
 * `DELETE    /item/comment` will delete comment
 
-## 6 Delete multiple
 
-* `POST    /item/deletemultiple` will delete items
 
-Parameters:
-* id: comma separated list of item identifiers (example: id=1,2,3).
+## 6. Archive 
 
-User performing request must have sufficient rights to delete specified items.
-No error will be rised and item delete request simply ignored if user does not have rights to delete specific item.
+### 6.1 Archive item
 
-Possible HTTP return responses:
-
-* 200 operation successful
-* 400 invalid format of list of identifiers
-
-## 7 Archive item
+Moves item to Archive
 
 * `POST    /item/archive` will archive item
 
@@ -178,7 +169,7 @@ Possible HTTP return responses:
 * 403 not authorised
 * 404 item not found; it may be already archived or not visible to current user
 
-## 8 Restore item from archive
+## 6.2. Restore item from archive
 
 * `GET    /archive/restore` will restore item from archive
 
@@ -194,7 +185,7 @@ Possible HTTP return responses:
 * 404 item not found
 * 507 limit of items exceeded for current account
 
-## 9 Restore copy of item from archive
+## 6.3. Restore copy of item from archive
 
 * `GET    /archive/restorecopy` will restore copy of item from archive
 
@@ -210,7 +201,24 @@ Possible HTTP return responses:
 * 404 item not found
 * 507 limit of items exceeded for current account
 
-## 10 Archive multiple
+## 7. Multiple items operations
+
+### 7.1 Delete multiple items
+
+* `POST    /item/deletemultiple` will delete items
+
+Parameters:
+* id: comma separated list of item identifiers (example: id=1,2,3).
+
+User performing request must have sufficient rights to delete specified items.
+No error will be rised and item delete request simply ignored if user does not have rights to delete specific item.
+
+Possible HTTP return responses:
+
+* 200 operation successful
+* 400 invalid format of list of identifiers
+
+### 7.2 Archive multiple items
 
 * `POST    /item/archivemultiple` will archive multiple items
 
