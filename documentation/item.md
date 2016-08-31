@@ -5,114 +5,24 @@ Operations with items: tasks, events, projects, notes, files.
 
 ## Item  object properties
 
-
-<table>
-    <tr>
-        <th>Field</th>
-        <th>Type</th>
-         <th>Example</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td><code>id</code></td>
-        <td>long</td>
-        <td>123000</td>
-        <td>Globally unique item Identifier</td>
-    </tr>
-       <tr>
-        <td><code>guid</code></td>
-        <td>String (UDID)</td>
-        <td>123456abcdef</td>
-        <td>Globally unique item Identifier used for public sharing</td>
-    </tr>
-     <tr>
-        <td><code>user_id</code></td>
-        <td>long</td>
-        <td>123000</td>
-        <td>user id of owner, user who created this item</td>
-    </tr>  
-     <tr>
-        <td><code>title</code></td>
-        <td>String (512)</td>
-        <td>My Task</td>
-        <td>title</td>
-    </tr>  
-       <tr>
-        <td><code>completed</code></td>
-        <td>int</td>
-        <td>0</td>
-        <td>Indication if this item is completed</td>
-    </tr>  
-       <tr>
-        <td><code>color</code></td>
-        <td>int</td>
-        <td>0</td>
-        <td>Color tag (index of predefined colors) used for items (tasks, events, notes, ..). Onde of these colors: [no color, '#FB7E6E', '#F8B957', '#F3DF5B', '#C2D95B', '#6CB4FF', '#CAA4DF', '#B8B8B8']</td>
-    </tr> 
-    <tr>
-        <td><code>color_value</code></td>
-        <td>Strng</td>
-        <td>#5e93c3</td>
-        <td>Color value used for projects. Default: #5e93c3<br/>One of these colors: ['#5e93c3', '#fc2f6a', '#fd9426', '#fecb2e', '#55ce2e', '#cb77df', '#a18460']</td>
-    </tr> 
-    <tr>
-        <td><code>category</code></td>
-        <td>int</td>
-        <td>1</td>
-        <td>Category (or type) of item: 0:project 1: task 2:event 4: note 5:file</td>
-    </tr> 
-       <tr>
-        <td><code>message</code></td>
-        <td>String (5000)</td>
-        <td>Hello</td>
-        <td>Item description text</td>
-    </tr> 
-       <tr>
-        <td><code>parent</code></td>
-        <td>long</td>
-        <td>0</td>
-        <td>Unique id of parent item. Default: 0. 0 means item is not child of another item and not inside of project</td>
-    </tr> 
-       <tr>
-        <td><code>recurring</code></td>
-        <td>int</td>
-        <td>0</td>
-        <td>0: not recurring, 1: daily, 2: weekly, 3: monthly, 4: yearly</td>
-    </tr> 
-       <tr>
-        <td><code>assigneeId</code></td>
-        <td>long</td>
-        <td>0</td>
-        <td>Assignee, primary responsible person. User id of user whom item is assigned to</td>
-    </tr> 
-        <tr>
-        <td><code>participants</code></td>
-        <td>comma separated list of user identifiers</td>
-        <td>322,413</td>
-        <td>array of user id for this item participants</td>
-    </tr>    
-         <tr>
-        <td><code>start_date</code></td>
-        <td>Date</td>
-        <td>2012-03-15T19:00:00.000+10:00</td>
-        <td>Start date and time for this item. Default:null.</td>
-    </tr>    
-          <tr>
-        <td><code>end_date</code></td>
-        <td>Date</td>
-        <td>2012-03-15T19:00:00.000+10:00</td>
-        <td>End date and time for this item. Default:null.</td>
-    </tr>
-             <tr>
-        <td><code>is_all_day</code></td>
-        <td>int</td>
-        <td>0</td>
-        <td>Indicator that this item is "all day" event. Only date without time should be used from start/end date field..</td>
-    </tr>
-    <tr>
-        <td><code>alerts</code></td>
-        <td>JSON array</td>
-        <td><code>
+|Field        |Type         |Example         |Description|
+|-------------|-------------|----------------|-----------|
+|<code>id</code>        |long        |123000        |Globally unique item Identifier    |
+|<code>guid</code>        |String (UDID)        |123456abcdef        |Globally unique item Identifier used for public sharing    |
+|<code>user_id</code>        |long        |123000        |user id of owner, user who created this item    |  
+|<code>title</code>        |String (512)        |My Task        |title    |  
+|<code>completed</code>        |int        |0        |Indication if this item is completed    |  
+|<code>color</code>        |int        |0        |Color tag (index of predefined colors) used for items (tasks, events, notes, ..). Onde of these colors: [no color, '#FB7E6E', '#F8B957', '#F3DF5B', '#C2D95B', '#6CB4FF', '#CAA4DF', '#B8B8B8']    | 
+|<code>color_value</code>        |Strng        |#5e93c3        |Color value used for projects. Default: #5e93c3<br/>One of these colors: ['#5e93c3', '#fc2f6a', '#fd9426', '#fecb2e', '#55ce2e', '#cb77df', '#a18460']    | 
+|<code>category</code>        |int        |1        |Category (or type) of item: 0:project 1: task 2:event 4: note 5:file    | 
+|<code>message</code>        |String (5000)        |Hello        |Item description text    | 
+|<code>parent</code>        |long        |0        |Unique id of parent item. Default: 0. 0 means item is not child of another item and not inside of project    | 
+|<code>recurring</code>        |int        |0        |0: not recurring, 1: daily, 2: weekly, 3: monthly, 4: yearly    | 
+|<code>assigneeId</code>        |long        |0        |Assignee, primary responsible person. User id of user whom item is assigned to    | 
+|<code>participants</code>        |comma separated list of user identifiers        |322,413        |array of user id for this item participants    |    
+|<code>start_date</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Start date and time for this item. Default:null.    | |<code>end_date</code>        |Date        |2012-03-15T19:00:00.000+10:00        |End date and time for this item. Default:null.    |
+|<code>is_all_day</code>        |int        |0        |Indicator that this item is "all day" event. Only date without time should be used from start/end date field..    |
+|<code>alerts</code>        |JSON array        |<code>
             [
                 {"timeType":4,"time":0,"timeSpecified":null,"repeat":0,
                 "repeatInterval":0,"sound":true,"alert":true,
@@ -127,8 +37,7 @@ Operations with items: tasks, events, projects, notes, files.
                 "repeat":0,"repeatInterval":0,"sound":true,"alert":true,
                 "email":true,"push":true}
             ]
-        </code></td>
-        <td>
+        </code>        |
             Create/Update/Delete reminders:<br />
             * Create: simply add new alert to array and put data to server
             * Update: simply update existing alert in array (id must be specified in alert object) and put data to server
@@ -148,75 +57,19 @@ Operations with items: tasks, events, projects, notes, files.
                     "push":true // optional: send push notification to mobile device
                 }
             </code>
-        </td>
-    </tr>    
-    <tr>
-        <td><code>shared</code></td>
-        <td>int</td>
-        <td>0</td>
-        <td>0: Item is private. 1: item is shared, visile to team memebrs (Business account feature)</td>
-    </tr>
-   <tr>
-        <td><code>time_last_update</code></td>
-        <td>Date</td>
-        <td>2012-03-15T19:00:00.000+10:00</td>
-        <td>Timestamp when this item was last changed (updated).</td>
-    </tr>
-       <tr>
-        <td><code>time_create</code></td>
-        <td>Date</td>
-        <td>2012-03-15T19:00:00.000+10:00</td>
-        <td>Timestamp when this item was created.</td>
-    </tr>
-           <tr>
-        <td><code>starred</code></td>
-        <td>int</td>
-        <td>0</td>
-        <td>If item is marked as starred, 1 or 0</td>
-    </tr>
-           <tr>
-        <td><code>time_track</code></td>
-        <td>int</td>
-        <td>0</td>
-        <td>1/0 flag to specify if time tracking is enabled for htis item. Default:0.</td>
-    </tr>
-               <tr>
-        <td><code>time_est</code></td>
-        <td>float</td>
-        <td>0</td>
-        <td>Time estimated for this item, in hours. Used in time tracking calculations.Optional.</td>
-    </tr>
-                 <tr>
-        <td><code>time_spent</code></td>
-        <td>float</td>
-        <td>0</td>
-        <td>Total time spent recorded for this item.</td>
-    </tr>
-                     <tr>
-        <td><code>priority</code></td>
-        <td>int</td>
-        <td>20000</td>
-        <td>Arbitrary priority. 10000-19999:low, 20000-29999:normal, 30000:high. Default: 20000 (normal)</td>
-    </tr>
-                        <tr>
-        <td><code>tags</code></td>
-        <td>comma separated list of tags</td>
-        <td>"work","home"</td>
-        <td>array or tags added to item</td>
-    </tr>
-     <tr>
-        <td><code>instances</code></td>
-        <td>array[item_instance]</td>
-        <td>[]</td>
-        <td>array of instances for recurring item. at PUT/POST requests this field is ignored by the server.</td>
-    </tr>
-    <tr>
-        <td><code>location</code></td>
-        <td>object</td>
-        <td>{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}</td>
-        <td>Map that contains long/lat coordinates and address</td>
-    </tr>
-</table>
+            |    
+|<code>shared</code>        |int        |0        |0: Item is private. 1: item is shared, visile to team memebrs (Business account feature)    |
+|<code>time_last_update</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was last changed (updated).    |
+|<code>time_create</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was created.    |
+|<code>starred</code>        |int        |0        |If item is marked as starred, 1 or 0    |
+|<code>time_track</code>        |int        |0        |1/0 flag to specify if time tracking is enabled for htis item. Default:0.    |
+|<code>time_est</code>        |float        |0        |Time estimated for this item, in hours. Used in time tracking calculations.Optional.    |
+|<code>time_spent</code>        |float        |0        |Total time spent recorded for this item.    |
+|<code>priority</code>        |int        |20000        |Arbitrary priority. 10000-19999:low, 20000-29999:normal, 30000:high. Default: 20000 (normal)    |
+|<code>tags</code>        |comma separated list of tags        |"work","home"        |array or tags added to item    |
+|<code>instances</code>        |array[item_instance]        |[]        |array of instances for recurring item. at PUT/POST requests this field is ignored by the server.    |
+|<code>location</code>        |object        |{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}        |Map that contains long/lat coordinates and address    |
+
 
 # Methods 
 
