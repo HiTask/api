@@ -22,7 +22,46 @@ Operations with items: tasks, events, projects, notes, files.
 |<code>participants</code>        |comma separated list of user identifiers        |322,413        |array of user id for this item participants    |    
 |<code>start_date</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Start date and time for this item. Default:null.    | |<code>end_date</code>        |Date        |2012-03-15T19:00:00.000+10:00        |End date and time for this item. Default:null.    |
 |<code>is_all_day</code>        |int        |0        |Indicator that this item is "all day" event. Only date without time should be used from start/end date field..    |
-|<code>alerts</code>        |JSON array        |<code>
+|<code>alerts</code>        |JSON array        |  See "Alerts" below    |             |    
+|<code>shared</code>        |int        |0        |0: Item is private. 1: item is shared, visile to team memebrs (Business account feature)    |
+|<code>time_last_update</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was last changed (updated).    |
+|<code>time_create</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was created.    |
+|<code>starred</code>        |int        |0        |If item is marked as starred, 1 or 0    |
+|<code>time_track</code>        |int        |0        |1/0 flag to specify if time tracking is enabled for htis item. Default:0.    |
+|<code>time_est</code>        |float        |0        |Time estimated for this item, in hours. Used in time tracking calculations.Optional.    |
+|<code>time_spent</code>        |float        |0        |Total time spent recorded for this item.    |
+|<code>priority</code>        |int        |20000        |Arbitrary priority. 10000-19999:low, 20000-29999:normal, 30000:high. Default: 20000 (normal)    |
+|<code>tags</code>        |comma separated list of tags        |"work","home"        |array or tags added to item    |
+|<code>instances</code>        |array[item_instance]        |[]        |array of instances for recurring item. at PUT/POST requests this field is ignored by the server.    |
+|<code>location</code>        |object        |{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}        |Map that contains long/lat coordinates and address    |
+
+### Alerts structure
+
+Create/Update/Delete reminders:<br />
+ 
+* Create: simply add new alert to array and put data to server
+* Update: simply update existing alert in array (id must be specified in alert object) and put data to server
+* Delete: simply remove alert from array and put data to server
+
+Alert object description:
+```js
+                {
+                    "id":900, // optional: if id is not specified then new alert will be created, or existing updated otherwise
+                    "timeType":4, // mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
+                    "time":0, // mandatory if timeType in [2, 3, 4]
+                    "timeSpecified":null, // mandatory if timeType=1, format is same as for start_date and end_date of item object
+                    "repeat":0, // optional: how many times reminder should be repeated
+                    "repeatInterval":0, // optional: repeat interval in minutes
+                    "sound":true, // optional: play sound
+                    "alert":true, // optional: display notification in desktop/browser version of application
+                    "email":true, // optional: send email
+                    "push":true // optional: send push notification to mobile device
+                }
+```
+            
+#### Example
+
+```js
             [
                 {"timeType":4,"time":0,"timeSpecified":null,"repeat":0,
                 "repeatInterval":0,"sound":true,"alert":true,
@@ -37,40 +76,8 @@ Operations with items: tasks, events, projects, notes, files.
                 "repeat":0,"repeatInterval":0,"sound":true,"alert":true,
                 "email":true,"push":true}
             ]
-        </code>        |
-            Create/Update/Delete reminders:<br />
-            * Create: simply add new alert to array and put data to server
-            * Update: simply update existing alert in array (id must be specified in alert object) and put data to server
-            * Delete: simply remove alert from array and put data to server
-            Alert object description:
-            <code>
-                {
-                    "id":900, // optional: if id is not specified then new alert will be created, or existing updated otherwise
-                    "timeType":4, // mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
-                    "time":0, // mandatory if timeType in [2, 3, 4]
-                    "timeSpecified":null, // mandatory if timeType=1, format is same as for start_date and end_date of item object
-                    "repeat":0, // optional: how many times reminder should be repeated
-                    "repeatInterval":0, // optional: repeat interval in minutes
-                    "sound":true, // optional: play sound
-                    "alert":true, // optional: display notification in desktop/browser version of application
-                    "email":true, // optional: send email
-                    "push":true // optional: send push notification to mobile device
-                }
-            </code>
-            |    
-|<code>shared</code>        |int        |0        |0: Item is private. 1: item is shared, visile to team memebrs (Business account feature)    |
-|<code>time_last_update</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was last changed (updated).    |
-|<code>time_create</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was created.    |
-|<code>starred</code>        |int        |0        |If item is marked as starred, 1 or 0    |
-|<code>time_track</code>        |int        |0        |1/0 flag to specify if time tracking is enabled for htis item. Default:0.    |
-|<code>time_est</code>        |float        |0        |Time estimated for this item, in hours. Used in time tracking calculations.Optional.    |
-|<code>time_spent</code>        |float        |0        |Total time spent recorded for this item.    |
-|<code>priority</code>        |int        |20000        |Arbitrary priority. 10000-19999:low, 20000-29999:normal, 30000:high. Default: 20000 (normal)    |
-|<code>tags</code>        |comma separated list of tags        |"work","home"        |array or tags added to item    |
-|<code>instances</code>        |array[item_instance]        |[]        |array of instances for recurring item. at PUT/POST requests this field is ignored by the server.    |
-|<code>location</code>        |object        |{"longitude":123.1234567,"latitude":-4.0987654321,"address":"qwe"}        |Map that contains long/lat coordinates and address    |
-
-
+```
+        
 # Methods 
 
 ## 1 Get array of items
