@@ -22,7 +22,7 @@ Operations with items: tasks, events, projects, notes, files.
 |<code>participants</code>        |comma separated list of user identifiers        |322,413        |array of user id for this item participants    |    
 |<code>start_date</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Start date and time for this item. Default:null.    | |<code>end_date</code>        |Date        |2012-03-15T19:00:00.000+10:00        |End date and time for this item. Default:null.    |
 |<code>is_all_day</code>        |int        |0        |Indicator that this item is "all day" event. Only date without time should be used from start/end date field..    |
-|<code>alerts</code>        |JSON array        |  See "Alerts" below    | |    
+|<code>alerts</code>        |JSON array of JSON objects        |  See "Alerts" below    | |    
 |<code>shared</code>        |int        |0        |0: Item is private. 1: item is shared, visile to team memebrs (Business account feature)    |
 |<code>time_last_update</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was last changed (updated).    |
 |<code>time_create</code>        |Date        |2012-03-15T19:00:00.000+10:00        |Timestamp when this item was created.    |
@@ -46,16 +46,16 @@ Create/Update/Delete reminders:<br />
 Alert object description:
 ```js
     {
-        "id":900, // optional: if id is not specified then new alert will be created, or existing updated otherwise
-        "timeType":4, // mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
-        "time":0, // mandatory if timeType in [2, 3, 4]
-        "timeSpecified":null, // mandatory if timeType=1, format is same as for start_date and end_date of item object
-        "repeat":0, // optional: how many times reminder should be repeated
-        "repeatInterval":0, // optional: repeat interval in minutes
-        "sound":true, // optional: play sound
-        "alert":true, // optional: display notification in desktop/browser version of application
-        "email":true, // optional: send email
-        "push":true // optional: send push notification to mobile device
+        "id":900, // long, optional: if id is not specified then new alert will be created, or existing updated otherwise
+        "timeType":4, // long, mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
+        "time":0, // long, mandatory if timeType in [2, 3, 4]
+        "timeSpecified":"2016-08-31T11:00:00.000+04:00", // date, mandatory if timeType=1, format is same as for start_date and end_date of item object
+        "repeat":0, // long, optional: how many times reminder should be repeated
+        "repeatInterval":0, // long, optional: repeat interval in minutes
+        "sound":true, // boolean, optional: play sound
+        "alert":true, // boolean, optional: display notification in desktop/browser version of application
+        "email":true, // boolean, optional: send email
+        "push":true // boolean, optional: send push notification to mobile device
     }
 ```
 
@@ -63,16 +63,16 @@ Alert object description:
 
 ```js
 [
-    {"timeType":4,"time":0,"timeSpecified":null,"repeat":0,
+    {"timeType":4,"time":0,"repeat":0,
     "repeatInterval":0,"sound":true,"alert":true,
     "email":true,"push":true},
-    {"timeType":4,"time":5,"timeSpecified":null,"repeat":0,
+    {"timeType":4,"time":5,"repeat":0,
     "repeatInterval":0,"sound":true,"alert":true,"email":true,
     "push":true},
-    {"timeType":3,"time":1,"timeSpecified":null,"repeat":0,
+    {"timeType":3,"time":1,"repeat":0,
     "repeatInterval":0,"sound":true,"alert":true,"email":true,
     "push":true},
-    {"timeType":1,"time":0,"timeSpecified":"2016-08-31T11:00:00.000+04:00",
+    {"timeType":1,"timeSpecified":"2016-08-31T11:00:00.000+04:00",
     "repeat":0,"repeatInterval":0,"sound":true,"alert":true,
     "email":true,"push":true}
 ]
