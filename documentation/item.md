@@ -50,8 +50,8 @@ Alert object description:
         "timeType":4, // long, mandatory; possible values: 1 - specified time, 2 - days before, 3 - hours before, 4 - minutes before
         "time":0, // long, mandatory if timeType in [2, 3, 4]
         "timeSpecified":"2016-08-31T11:00:00.000+04:00", // date, mandatory if timeType=1, format is same as for start_date and end_date of item object
-        "repeat":0, // long, optional: how many times reminder should be repeated
-        "repeatInterval":0, // long, optional: repeat interval in minutes
+        "repeat":2, // long, optional: how many times reminder should be repeated
+        "repeatInterval":5, // long, optional: repeat interval in minutes
         "sound":true, // boolean, optional: play sound
         "alert":true, // boolean, optional: display notification in desktop/browser version of application
         "email":true, // boolean, optional: send email
@@ -63,17 +63,17 @@ Alert object description:
 
 ```js
 [
-    {"timeType":4,"time":0,"repeat":0,
+    {"timeType":4,"time":0,"repeat":1,
     "repeatInterval":0,"sound":true,"alert":true,
     "email":true,"push":true},
-    {"timeType":4,"time":5,"repeat":0,
+    {"timeType":4,"time":5,"repeat":1,
     "repeatInterval":0,"sound":true,"alert":true,"email":true,
     "push":true},
-    {"timeType":3,"time":1,"repeat":0,
+    {"timeType":3,"time":1,"repeat":1,
     "repeatInterval":0,"sound":true,"alert":true,"email":true,
     "push":true},
     {"timeType":1,"timeSpecified":"2016-08-31T11:00:00.000+04:00",
-    "repeat":0,"repeatInterval":0,"sound":true,"alert":true,
+    "repeat":1,"repeatInterval":0,"sound":true,"alert":true,
     "email":true,"push":true}
 ]
 ```
