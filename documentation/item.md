@@ -11,6 +11,8 @@ Operations with items: tasks, events, projects, notes, files.
 |<code>guid</code>        |String (UDID)        |123456abcdef        |Globally unique item Identifier used for public sharing    |
 |<code>user_id</code>        |long        |123000        |user id of owner, user who created this item    |  
 |<code>title</code>        |String (512)        |My Task        |title    |  
+|<code>short_name</code>        |String (8)        |APIDOCS        |Short name of project. Accepted by projects only. Restrictions: 8 characters length maximum, latin letters and digits.    |  
+|<code>issue_id</code>        |String        |APIDOCS-17        |Unique reference identifier for tasks and projects.    |  
 |<code>completed</code>        |int        |0        |Indication if this item is completed    |  
 |<code>color</code>        |int        |0        |Color tag (index of predefined colors) used for items (tasks, events, notes, ..). Onde of these colors: [no color, '#FB7E6E', '#F8B957', '#F3DF5B', '#C2D95B', '#6CB4FF', '#CAA4DF', '#B8B8B8']    | 
 |<code>color_value</code>        |Strng        |#5e93c3        |Color value used for projects. Default: #5e93c3<br/>One of these colors: ['#5e93c3', '#fc2f6a', '#fd9426', '#fecb2e', '#55ce2e', '#cb77df', '#a18460']    | 
