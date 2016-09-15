@@ -117,6 +117,7 @@ HTTP code | API Error code | Description
 400 | 76 | Owner {owner name} is not allowed to change own permission.
 400 | 77 | Permission {principal X} downgrade to {permission X} is not allowed because parent has {permission Y} for this principal.
 400 | 78 | Cannot remove {assignee/participant} {user name} permission.
+400 | 80 | Short name already used.
 
 
 ## 4. Delete
